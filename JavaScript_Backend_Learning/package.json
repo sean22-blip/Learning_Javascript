@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "MiddleWare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean22-blip/JavaScript_Backend_Learning.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sean22-blip/JavaScript_Backend_Learning/issues"
+  },
+  "homepage": "https://github.com/sean22-blip/JavaScript_Backend_Learning#readme"
+}
