@@ -81,12 +81,7 @@ app.put('/users/:id', (req, res) => {
 app.delete('/users/:id', (req, res) => {
   const userId = Number(req.params.id);
   let index = users.findIndex((user)=> { user.id === userId})
-  // if(!delId){
-  //   return res.status(404).json({error: `must not be empty!`})
-  // }
-  // const user = users.find(() => user.id === delId );
   if(userId === -1 ){
-  // if (users.indexOf(delId - 1)) {
     return res.status(404).json({ error: `user can not be found!` })
   }
   users.splice(index, 1);
