@@ -43,14 +43,7 @@ app.get('/users/:id', (req, res) => {
   if (!user) {
     return res.status(404).json({ error: `Cannot find user!` })
   }
-  res.status(200).json(`${user.name} is removed!`);
-  // users.forEach((user) => {
-  //   if(user.id === userId){
-  //     // userId = JSON.stringify;
-  //     res.status(200).JSON.stringify(user);
-  //   }
-  // })
-
+  // res.status(200).json(`${user.name} is removed!`);
 })
 //Task 5 create a new user
 app.post('/users', (req, res) => {
