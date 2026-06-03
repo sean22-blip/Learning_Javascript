@@ -1,0 +1,12 @@
+// console.log(2 **3);
+console.log(Math.sqrt(2));
+console.log(Math.sqrt(4));
+console.log(Math.round(2.5));
+console.log(Math.floor(2.32));
+console.log(Math.ceil(2.1));
+console.log(Math.abs(-10));
+console.log(Math.max(1,2,4));
+console.log(Math.min(21,21,213));
+console.log(Math.PI);
+console.log(Math.LN10);
+console.log(Math.SQRT1_2);
