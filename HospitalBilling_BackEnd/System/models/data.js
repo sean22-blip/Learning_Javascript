@@ -31,16 +31,16 @@ const departments = [
 const machines = [
   { id: 1,  name: "MRI Scanner",        category: "Radiology",  ratePerHour: 2500,    status: "Active"      },
   { id: 2,  name: "CT Scan Machine",    category: "Radiology",  ratePerHour: 1800,    status: "Active"      },
-  { id: 3,  name: "X-Ray Machine",      category: "Radiology",  ratePerSession: 400,  status: "Active"      },
-  { id: 4,  name: "Ventilator",         category: "ICU",        ratePerDay: 3000,     status: "Active"      },
-  { id: 5,  name: "ECG Machine",        category: "Cardiology", ratePerSession: 600,  status: "Active"      },
-  { id: 6,  name: "Ultrasound Machine", category: "Radiology",  ratePerSession: 900,  status: "Active"      },
-  { id: 7,  name: "Dialysis Machine",   category: "Nephrology", ratePerSession: 3500, status: "Active"      },
-  { id: 8,  name: "Infusion Pump",      category: "General",    ratePerDay: 200,      status: "Active"      },
-  { id: 9,  name: "Defibrillator",      category: "Emergency",  ratePerUse: 1500,     status: "Maintenance" },
+  { id: 3,  name: "X-Ray Machine",      category: "Radiology",  ratePerHour: 400,  status: "Active"      },
+  { id: 4,  name: "Ventilator",         category: "ICU",        ratePerHour: 3000,     status: "Active"      },
+  { id: 5,  name: "ECG Machine",        category: "Cardiology", ratePerHour: 600,  status: "Active"      },
+  { id: 6,  name: "Ultrasound Machine", category: "Radiology",  ratePerHour: 900,  status: "Active"      },
+  { id: 7,  name: "Dialysis Machine",   category: "Nephrology", ratePerHour: 3500, status: "Active"      },
+  { id: 8,  name: "Infusion Pump",      category: "General",    ratePerHour: 200,      status: "Active"      },
+  { id: 9,  name: "Defibrillator",      category: "Emergency",  ratePerHour: 1500,     status: "Maintenance" },
   { id: 10, name: "Anesthesia Machine", category: "Surgery",    ratePerHour: 2000,    status: "Active"      },
-  { id: 11, name: "Patient Monitor",    category: "ICU",        ratePerDay: 1000,     status: "Active"      },
-  { id: 12, name: "Pulse Oximeter",     category: "General",    ratePerDay: 150,      status: "Active"      },
+  { id: 11, name: "Patient Monitor",    category: "ICU",        ratePerHour: 1000,     status: "Active"      },
+  { id: 12, name: "Pulse Oximeter",     category: "General",    ratePerHour: 150,      status: "Active"      },
 ];
 
 const medicines = [
