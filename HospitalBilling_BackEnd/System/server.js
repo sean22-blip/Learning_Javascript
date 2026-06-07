@@ -3,6 +3,8 @@ import express from 'express';
 import categoryRoutes from './routes/categoryRoutes';
 import departmentRoutes from './routes/departmentRoutes';
 import machineRoutes from './routes/machineRoutes';
+import medicineRoutes from './routes/medicineRoutes';
+import staffRoutes from './routes/staffRoutes';
 // import categor
 const app = express();
 
@@ -13,6 +15,7 @@ app.use(express.json());
 app.use('/categories', categoryRoutes)
 app.use('/departments', departmentRoutes)
 app.use('/machines', machineRoutes)
+app.use('/staffs', staffRoutes)
 app.listen(port, () => {
       console.log(`🚀 Srver is running on http://localhost:${port}`);
 

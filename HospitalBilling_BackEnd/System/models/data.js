@@ -62,12 +62,12 @@ const medicines = [
 ];
 
 const staff = [
-  { id: 1,  name: "Dr. Arjun Mehta",   role: "Chief Surgeon",       departmentId: 1,  consultFee: 2000, shift: "Morning"  },
-  { id: 2,  name: "Dr. Priya Sharma",  role: "Cardiologist",        departmentId: 2,  consultFee: 1800, shift: "Morning"  },
-  { id: 3,  name: "Dr. Rahul Verma",   role: "Anesthesiologist",    departmentId: 1,  consultFee: 1500, shift: "Rotating" },
-  { id: 4,  name: "Dr. Sneha Patel",   role: "Gynecologist",        departmentId: 3,  consultFee: 1600, shift: "Morning"  },
-  { id: 5,  name: "Dr. Kiran Nair",    role: "Pediatrician",        departmentId: 4,  consultFee: 1200, shift: "Morning"  },
-  { id: 6,  name: "Dr. Amit Joshi",    role: "Emergency Physician", departmentId: 5,  consultFee: 1400, shift: "Night"    },
+  { id: 1,  name: "Dr. Arjun Mehta",   role: "Chief Surgeon",       departmentId: 1,  hourlyRate: 2000, shift: "Morning"  },
+  { id: 2,  name: "Dr. Priya Sharma",  role: "Cardiologist",        departmentId: 2,  hourlyRate: 1800, shift: "Morning"  },
+  { id: 3,  name: "Dr. Rahul Verma",   role: "Anesthesiologist",    departmentId: 1,  hourlyRate: 1500, shift: "Rotating" },
+  { id: 4,  name: "Dr. Sneha Patel",   role: "Gynecologist",        departmentId: 3,  hourlyRate: 1600, shift: "Morning"  },
+  { id: 5,  name: "Dr. Kiran Nair",    role: "Pediatrician",        departmentId: 4,  hourlyRate: 1200, shift: "Morning"  },
+  { id: 6,  name: "Dr. Amit Joshi",    role: "Emergency Physician", departmentId: 5,  hourlyRate: 1400, shift: "Night"    },
   { id: 7,  name: "Nurse Kavitha R.",  role: "Head Nurse",          departmentId: 6,  hourlyRate: 250,  shift: "Rotating" },
   { id: 8,  name: "Nurse Deepa Sinha", role: "Staff Nurse",         departmentId: 7,  hourlyRate: 180,  shift: "Morning"  },
   { id: 9,  name: "Nurse Ravi Kumar",  role: "Staff Nurse",         departmentId: 1,  hourlyRate: 180,  shift: "Night"    },
@@ -75,10 +75,9 @@ const staff = [
   { id: 11, name: "Meena Pillai",      role: "Radiographer",        departmentId: 9,  hourlyRate: 200,  shift: "Morning"  },
   { id: 12, name: "Arun Thomas",       role: "Billing Executive",   departmentId: 10, hourlyRate: 140,  shift: "Morning"  },
   { id: 13, name: "Lakshmi Devi",      role: "Pharmacist",          departmentId: 11, hourlyRate: 170,  shift: "Rotating" },
-  { id: 14, name: "Dr. Neha Gupta",    role: "Nephrologist",        departmentId: 12, consultFee: 1700, shift: "Morning"  },
+  { id: 14, name: "Dr. Neha Gupta",    role: "Nephrologist",        departmentId: 12, hourlyRate: 1700, shift: "Morning"  },
   { id: 15, name: "Prakash Nair",      role: "Physiotherapist",     departmentId: 13, hourlyRate: 190,  shift: "Morning"  },
-  { id: 16, name: "Dr. Vikram Bose",   role: "Neurologist",         departmentId: 14, consultFee: 1900, shift: "Morning"  },
+  { id: 16, name: "Dr. Vikram Bose",   role: "Neurologist",         departmentId: 14, hourlyRate: 1900, shift: "Morning"  },
   { id: 17, name: "Nurse Anita Roy",   role: "Staff Nurse",         departmentId: 14, hourlyRate: 180,  shift: "Night"    },
 ];
-
 export { categories, departments, machines, medicines, staff };
