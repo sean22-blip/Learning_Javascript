@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getAllMachine, getMachineById,addNewMachine, updateMachineById, delMachineById } from "../controller/machineController";
+import { getAllMachines, getMachineById,createMachine, updateMachineById, delMachineById } from "../controller/machineController.js";
 const machineRoutes = Router();
 
-machineRoutes.get('/', getAllMachine);
+machineRoutes.get('/', getAllMachines);
 machineRoutes.get('/:id', getMachineById);
-machineRoutes.post('/', addNewMachine);
+machineRoutes.post('/', createMachine);
 machineRoutes.put('/:id', updateMachineById);
 machineRoutes.delete('/:id', delMachineById);
 

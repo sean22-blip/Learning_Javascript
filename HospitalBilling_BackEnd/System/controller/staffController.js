@@ -1,7 +1,7 @@
 import {staff} from '../models/data.js'
 
 export const getAllStaffs = (req, res) =>{
-    res.status(204).json(staff);
+    res.status(200).json(staff);
 }
 export const getStaffById = (req, res) =>{
     const id = Number(req.params.id);
@@ -12,7 +12,7 @@ export const getStaffById = (req, res) =>{
     if(!getId){
         return res.status(404).json({error: `cannot find staff with this id!`})
     }
-    res.stats(204).json(getId);
+    res.status(200).json(getId);
 }
 export const createStaff = (req, res)=>{
     const {name, role, departmentId, hourlyRate, shift} = req.body;
@@ -28,7 +28,7 @@ export const createStaff = (req, res)=>{
         shift: shift
     }
     staff.push(newStaff);
-    res.status(204).json(`successfully added new staff!`)
+    res.status(201).json(`successfully added new staff!`)
 }
 export const updateStaff = (req, res) =>{
     const id = Number(req.params.id);
@@ -43,7 +43,8 @@ export const updateStaff = (req, res) =>{
     if(Object.keys(req.body).length === 0){
         return res.status(404).json({error: `atleast one field must be provided!`})
     }
-    Object.assign(update, req.body);
+    Object.assign(updated, req.body);
+    res.status(200).json(`successfully updated!`)
 }
 export const delStaffById = (req, res) => {
     const id = Number(req.params.id);
@@ -51,9 +52,9 @@ export const delStaffById = (req, res) => {
         return res.status(404).json({error: `id must be provided!`})
     }
     const delStaff = staff.findIndex((s) => s.id === id);
-    if(!delStaff){
+    if(delStaff === -1){
         return res.status(404).json({erorr: `cannot find the staff with this id!`})
     }
+    res.status(200).json(`successfully remove staff!`)
     staff.splice(delStaff, 1);
-    res.status(204).json(`successfully remove staff!`)
 }

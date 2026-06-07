@@ -1,5 +1,4 @@
 import { categories } from "../models/data.js"
-const app = express();
 
 export const getAllcategory = (req, res) => {
 res.status(200).json(categories);

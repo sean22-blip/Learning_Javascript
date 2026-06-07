@@ -1,7 +1,7 @@
 import {medicines} from '../models/data.js'
 
 export const getAllMedicines = (req, res) => {
-     res.status(204).json(medicines);
+     res.status(200).json(medicines);
 }
 export const getMedicineById = (req, res) =>{
     const id = Number(req.params.id);
@@ -9,10 +9,10 @@ export const getMedicineById = (req, res) =>{
         return res.status(404).json({error: `id cannot be empty!`})
     }
     const findMed = medicines.find((h) => id === h.id);
-    if(!findBill){
+    if(!findMed){
         return res.status(404).json({error: `cannot find the bill with this id!`})
     }
-    res.status(204).json(`found the bill with this id!`);
+    res.status(200).json(findMed);
 }
 export const createMedicine = (req, res)=>{
     const {name, type, pricePerUnit, stock, category} = req.body;
@@ -20,7 +20,7 @@ export const createMedicine = (req, res)=>{
         return res.status(404).json({error: `all fields must be provided!`})
     }
     const newMed = {
-        id = (medicines.length) + 1,
+        id : (medicines.length) + 1,
         name: name,
         type: type,
         pricePerUnit: pricePerUnit,
@@ -28,7 +28,7 @@ export const createMedicine = (req, res)=>{
         category: category
     }
     medicines.push(newMed);
-    res.status(204).json(`successfully added new medicine!!`)
+    res.status(201).json(`successfully added new medicine!!`)
 }
 export const updateMedicine = (req, res)=>{
     const id = Number(req.params.id);
@@ -44,7 +44,7 @@ if(!update){
         return res.status(404).json({error: `atleast one field must be provided!`})
 }
     Object.assign(update, req.body);
-    res.status(204).json(`successfully updated medicine!`);
+    res.status(200).json(`successfully updated medicine!`);
 }
 export const delMedicine = (req, res) =>{
     const id = Number(req.params.id);
@@ -52,9 +52,9 @@ export const delMedicine = (req, res) =>{
         return res.status(404).json({error: `id cannot be empty!`})
     }
     const delMed = medicines.findIndex((m) => id === m.id);
-    if(!delMed){
+    if(delMed === -1){
         return res.status(404).json({error: `cannot find the matching id!`})
     }
     medicines.splice(delMed, 1);
-    res.status(204).json(`successfully deleted the medicine!`)
+    res.status(200).json(`successfully deleted the medicine!`)
 }

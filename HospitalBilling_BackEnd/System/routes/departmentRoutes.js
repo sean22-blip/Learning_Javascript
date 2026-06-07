@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllDepartments, getDepartmentById, createDepartment, updateDepartmentById, delDepartmentById } from "../controller/departmentController";
+import { getAllDepartments, getDepartmentById, createDepartment, updateDepartmentById, delDepartmentById } from "../controller/departmentController.js";
 
 const departmentRoutes = Router();
 departmentRoutes.get('/', getAllDepartments)

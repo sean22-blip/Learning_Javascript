@@ -1,10 +1,7 @@
-import {hospitalBilling} from '../models/data.js'
 
-import { departments } from "../models/data";
-import express from 'express'
-const app = express();
+import { departments } from "../models/data.js";
 export const getAllDepartments = (req, res) =>{
-    res.status(204).json();
+    res.status(200).json(departments);
 }
 export const getDepartmentById = (req, res) => {
     const id = Number(req.params.id);
@@ -12,7 +9,7 @@ export const getDepartmentById = (req, res) => {
         return res.status(404).json({error: `id cannot be empty!`})
     }
     const getId = departments.find((d) => id === d.id);
-    res.status(204).json(getId);
+    res.status(200).json(getId);
 }
 export const createDepartment = (req, res) => {
     const {name, head,floor, totalStaff} = req.body;
@@ -22,11 +19,12 @@ export const createDepartment = (req, res) => {
     const newDepartment = {
         'id' : (departments.length) + 1,
         name: name,
+        head: head,
         floor: floor,
         totalStaff: totalStaff
     }
     departments.push(newDepartment);
-    res.status(204).json(`succesfully added to department!`)
+    res.status(201).json(`succesfully added to department!`)
 }
 export const updateDepartmentById = (req, res) => {
     const id = Number(req.params.id);
@@ -36,9 +34,9 @@ export const updateDepartmentById = (req, res) => {
     if(Object.keys(req.body).length === 0){
         return res.status(404).json({error: `atleast one field must be provided!`})
     }
-    const updateDepartment = categories.find((c) => id === c.id);
+    const updateDepartment = departments.find((c) => id === c.id);
     Object.assign(updateDepartment, req.body);
-    res.status(204).json(`successfully updated Department!`)
+    res.status(200).json(`successfully updated Department!`)
 }
 export const delDepartmentById = (req, res) => {
     const id = Number(req.params.id);
@@ -50,5 +48,5 @@ export const delDepartmentById = (req, res) => {
         return res.stat(404).json({error: `cannot find department with this id!`})
     }
     departments.splice(delDepartment, 1);
-    res.status(204).json(`succesfully deleted department`);
+    res.status(200).json(`succesfully deleted department`);
 } 
