@@ -59,22 +59,25 @@ async function getAirlineNameById(id) {
         }
         const time = new Date().toLocaleTimeString();
         const date = new Date().toLocaleDateString();
-        const fullRow = JSON.stringify(rows, null , 2)
-        const jsonTmp = JSON.stringify(rows, ['Name'], 2)
-        fs.appendFileSync(`airlinesNameById.json`, `\n${date}${time}\n`);
-        fs.appendFileSync('airlinesNameById.json', jsonTmp);
-         fs.appendFileSync(`airlinesNameById.txt`, `\n === ${date} === ${time} ===\n`);
-        fs.appendFileSync('airlinesNameById.txt', jsonTmp);
-        console.log(fullRow);
-        // console.log(jsonTmp);
-        // console.log(`Added ${jsonTmp} \n To airliensNameById.json!`)
-        console.log(`Added ${jsonTmp} \n To airliensNameById.txt!`)
+        const fullRow = JSON.stringify(rows, null, 2)
+        const jsonName = JSON.stringify(rows, ['Name'], 2)
+        const nameWithtime = {
+            timeStamp: `${time} + ${date}`,
+            name: `${rows[0].Name}`
+        }
+        fs.appendFileSync(`airlinesNameById.json`, JSON.stringify(nameWithtime, null , 2) + '\n')
+        fs.appendFileSync(`airlinesNameById.txt`, `\n === ${date} === ${time} ===\n`);
+        fs.appendFileSync('airlinesNameById.txt', jsonName);
+        console.log(nameWithtime);
+        // console.log(jsonName);
+        // console.log(`Added ${jsonName} \n To airliensNameById.json!`)
+        console.log(`Added ${jsonName} \n To airliensNameById.txt!`)
         // return jsonTmp;
     } catch (err) {
         console.log({ error: err.message });
     }
 }
-const airlineName = await getAirlineNameById(2);
+const airlineName = await getAirlineNameById(1000000000000);
 // console.log(airlineName);
 console.log("Thank you for using our system!")
 // const airlines = await getAirlines();
