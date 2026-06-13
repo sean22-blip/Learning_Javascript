@@ -45,7 +45,6 @@ async function getAirlineNameById(id) {
     //     console.log({error: err.message})
     // })
     //  res.status(201).json(`successfully get airline name by id!`)
-
     try {
         const [rows] = await pool.query(`select * from airlines where AirlineID = ?`, [id])
         //this is called the prepared staement is when we are sending the sequel and the values to the database seperately
@@ -72,7 +71,7 @@ async function getAirlineNameById(id) {
         // console.log(jsonName);
         // console.log(`Added ${jsonName} \n To airliensNameById.json!`)
         console.log(`Added ${jsonName} \n To airliensNameById.txt!`)
-        // return jsonTmp;
+        // return jsonTfmp;
     } catch (err) {
         console.log({ error: err.message });
     }
@@ -84,3 +83,5 @@ console.log("Thank you for using our system!")
 // console.log(airlines);
 // const rows = result[0];
 // console.log(result)
+
+
