@@ -33,7 +33,7 @@ export const createArticle =  (req, res)=>{
 }
 //update on artical by id
 export const updateByID = (req, res)=>{ 
-    const updateId = Number(req.params.id);
+    const updateId = parseInt(req.params.id);
     if(!updateId){
       return  res.status(404).json({error: `id can not be empty!`})
     }
@@ -49,7 +49,7 @@ export const updateByID = (req, res)=>{
 }
 //Delte by id
 export const delById = (req, res) => {
-    const delId = Number(req.params.id);
+    const delId = parseInt(req.params.id);
     const delArticle = articles.findIndex((article) => delId === article.id);
     if(delArticle === -1){
         return res.status(404).json({error: `article is not found!`})
