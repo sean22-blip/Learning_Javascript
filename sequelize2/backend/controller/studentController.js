@@ -1,6 +1,7 @@
 import sequeulize from '../dbConfig/dbConfig.js'
 import Student from '../model/Student.js';
 import Grade from '../model/Grade.js';
+import Course from '../model/courses.js'
 // import express from 'express'
 // express.json(());
 export const CreateNewStudent = async ( req, res,) => {
