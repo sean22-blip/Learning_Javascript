@@ -1,6 +1,8 @@
 import Student from "./model/student.js";
 import Courses from "./model/courses.js";
 import sequelize from "./config.js";
+import './associate.js'
+
 const students = await Student.findAll(
     { where: { group: 1 } }
     
@@ -13,6 +15,7 @@ for (const student of students) {
     }
 }
 
+sequelize.close();
 // const students = await Student.findAll(
 // { where: { group: 1 } },
 // { include: Courses }
