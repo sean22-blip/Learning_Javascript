@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { data, Link, Outlet, useOutletContext } from "react-router-dom";
-import React from "react";
-
+import { Link, Outlet, useOutletContext } from "react-router-dom";
+import { DepartmentDashboard } from "../department/departmentDashboard";
 export function Street() {
     return (<h2>This is street page</h2>)
 }
@@ -26,6 +25,10 @@ export function Home() {
         </div>
     )
 }
+export function DepDashboard(){
+    
+}
+
 export function Name() {
     const student = useOutletContext();
     return (
@@ -63,13 +66,13 @@ export function Name() {
     )
 }
 
-export function StudentDashboard(params) {
+export function StudentDashboard() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     const [student, setStudent] = useState([]);
-    const [newStudent, setnewStudent] = useState([])
+    // const [newStudent, setnewStudent] = useState([])
     useEffect(() => {
-        async function fetchData(params) {
+        async function fetchData() {
             try {
                 const res = await axios.get(`http://localhost:5000/api/Students`);
                 console.log(`User data:`, res.data);
@@ -99,6 +102,7 @@ export function StudentDashboard(params) {
                         <Link to='/student-dashboard/street' className="hover:text-[#e19528]">Student Street address</Link>
                         <Link to='/student-dashboard/profile' className="hover:text-[#e19528]">Student Profile</Link>
                         <Link to='/student-dashboard/name' className="hover:text-[#e19528]">Student Name</Link>
+                        <Link to='/student-dashboard/department' className="hover:text-[#e19528]">Department Dashboard</Link>
                     </nav>
                 </div>
                 <nav className="font-bold text-lg ml-[5em] mb-2 mt-10">
