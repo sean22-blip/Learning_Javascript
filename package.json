@@ -1,15 +1,20 @@
 {
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "autoprefixer": "^10.5.4",
     "axios": "^1.18.1",
+    "cors": "^2.8.6",
     "dom": "^0.0.3",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mysql2": "^3.22.6",
     "nodemon": "^3.1.14",
+    "postcss": "^8.5.19",
     "react": "^19.2.7",
     "react-router-dom": "^7.18.1",
     "router": "^2.2.0",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "tailwindcss": "^4.3.3"
   },
   "name": "learninig_javascript",
   "version": "1.0.0",

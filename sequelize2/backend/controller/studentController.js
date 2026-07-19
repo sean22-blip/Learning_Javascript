@@ -41,14 +41,14 @@ export const getStudentById = async ( req, res) => {
         if(!findStudent){
             return res.status(404).json(`cannot find student with this id!`)    
         }
-        const students = await Student.findAll({where: {age: 20}})
-        for(const student of students){
-            console.log(`${student.getFullName()} , (Age: ${student.age})`)
-            const courses = await student.get
-            for(const course of corses){
-                console.log(`${course.title}`)
-            }
-        }
+        // const students = await Student.findAll({where: {age: 20}})
+        // for(const student of students){
+        //     console.log(`${student.getFullName()} , (Age: ${student.age})`)
+        //     const courses = await student.getCourses();
+        //     for(const course of courses){
+        //         console.log(`${course.title}`)
+        //     }
+        // }
         res.status(201).json(
             findStudent.getFullName()
         );
