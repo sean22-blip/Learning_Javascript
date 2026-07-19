@@ -36,25 +36,37 @@ export function Home() {
 export function Name() {
     const student = useOutletContext();
     return (
-        <div>
-            <h2>This is the list of all Student</h2>
-            <h3>Student Name: </h3>
-            <ul>
-                {student.map((data, index) => (
-                    <li key={index}> {data}</li>
-                    // <li >Student LastName: {data.last_name}</li>
-                ))}
-            </ul>
-            {/* <ul>
-                {student.map((data, index) => (
-                    <React.Fragment key={index}>
-                        <li>Student First Name: {data.first_name}</li>
-                        <li >Student LastName: {data.last_name}</li>
-                    </React.Fragment>
+        <div className="flex flex-col items-center justify-center m-[3em]">
+            <h2 className="font-bold text-lg">Student Name</h2>
+            <div className=" flex flex-col text-black p-5 bg-blue-100 w-[100%]  rounded-[1em] ">
+                <table className="text-lg">
+                    <thead className=" ">
+                        <tr >
+                            <th  >First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                    </thead>
+                    <tbody className="bg-gray-300 text-black">
+                        {student.map((data, index) => (
+                            <tr key={index} className=" bg-gray-200">
+                                <td className="text-center">
+                                    <ul >
+                                        <li>{data.first_name}</li>
+                                    </ul>
+                                </td>
+                                <td className="text-center">
+                                    <ul>
+                                        <li>{data.last_name}</li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-                ))}
-            </ul> */}
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     )
 }
 
@@ -87,15 +99,18 @@ export function StudentDashboard(params) {
     return (
         <>
             <div>
-                <h2>This is Student page</h2>
-                <nav className="font-lg">
+                <h2 className="m-10 text-center font-bold text-3xl ">This is Student page</h2>
+                <nav className="font-bold text-lg ml-[2em] mb-2">
                     <Link to="/">Home</Link>
                 </nav>
-                <nav >
-                    <Link to='/students-dashboard/street'>Student Street address |</Link>
-                    <Link to='/students-dashboard/profile'>Student Profile |</Link>
-                    <Link to='/students-dashboard/name'>Student Name |</Link>
-                </nav>
+                <div className="flex justify-around py-2  bg-[#1792ff] ">
+                    <nav className="flex text-white font-semibold gap-[10em]">
+                        <Link to='/student-dashboard/street' className="hover:text-[#e19528]">Student Street address</Link>
+                        <Link to='/student-dashboard/profile' className="hover:text-[#e19528]">Student Profile</Link>
+                        <Link to='/student-dashboard/name' className="hover:text-[#e19528]">Student Name</Link>
+                    </nav>
+                </div>
+
                 <Outlet context={student} />
             </div>
         </>)
